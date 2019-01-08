@@ -1,0 +1,111 @@
+<view class="order-list">
+    <view wx:if="{{list == []}}" class="no-data-tip">暂无相关订单</view>
+    <view class="order-item"  wx:for="{{list}}"   wx:for-item="order">
+    <!-- <view class='anmeila-hd' id='but_{{order.id}}'>
+              <view class='anmeila-profile'>
+                <button data-test='{{order.id}}' bindtap="giveorder">放弃订单</button>
+              </view>
+            </view> -->
+        <navigator url="{{'/pages/partner/detailed/detailed?id='+order.id}}">
+            <view class="flex-row order-info">
+                <view class="flex-grow-1">订单号:{{order.order_no}}　<text style="color:red">{{order.status}}</text></view>
+                <view class="flex-grow-0">{{order.addtime}}</view>
+            </view>
+            
+            <view class="goods-list">
+                <view class="goods-item flex-row" wx:for="{{order.goodInfo}}" wx:for-item="goods">
+                    <view class="flex-grow-0" style="overflow: visible">
+                        <image class="goods-pic" mode="aspectFill" src="{{goods.pic}}" />
+                    </view>
+                    <view class="flex-grow-1 flex-col">
+                        <view class="flex-grow-1">
+                            <view class="goods-name">{{goods.name}}</view>
+                            <view class="attr-list">
+                                <view class="attr-item" wx:for="{{goods.attr}}" wx:for-item="attr">
+                                    {{attr.attr_group_name}}:{{attr.attr_name}}
+                                </view>
+                            </view>
+                        </view>
+                        <view class="flex-grow-0 flex-row">
+                            <view class="flex-grow-1 num">×{{goods.num}}</view>
+                            <view class="flex-grow-0 price">￥{{goods.price}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+
+         <view class="flex-row">
+            <view class="flex-row">
+            <view class="flex-grow-1 flex-y-center">
+            
+  
+            </view>
+
+            <view class="flex-grow-0 flex-y-center flex-row">
+                  <view class="flex-grow-1 flex-row">
+
+                        <view class="flex-grow-0">
+                
+
+                        </view>
+                    </view>
+                   </view>
+                  
+            </view>
+        </view>
+
+
+          <view>
+
+
+        </view>
+        
+
+<view class="table">
+  <view class="tr">
+    <view class="th">本单收益 =</view>
+    <view class="th">订单金额 -</view>
+    <view class="th ">自购返利 -</view>
+      <view class="th">管理收益 -</view>
+    <view class="th">推荐奖励</view>
+  </view>
+
+    <view class="tr bg-g">
+      <view class="td">{{order.total_shouyi}}元</view>
+      <view class="td">{{order.pay_price}}元</view>
+      <view class="td">{{order.rebate}}元</view>
+        <view class="td">{{order.guanli}}元</view>
+    <view class="td">{{order.pt_amount}}元</view>
+    </view>
+
+</view>
+
+
+<view class="table">
+  <view class="tr">
+    <view class="th">本单利润 =</view>
+    <view class="th">本单收益 -</view>
+    <view class="th ">成本价格 -</view>
+      <view class="th">订单运费</view>
+    <view class="th"></view>
+  </view>
+
+    <view class="tr bg-g">
+      <view class="td">{{order.shouyi}}元</view>
+      <view class="td">{{order.total_shouyi}}元</view>
+      <view class="td">{{order.cost_price}}元</view>
+        <view class="td">{{order.express_price}}元</view>
+    <view class="td"></view>
+    </view>
+</view>
+
+
+       
+    </view>
+
+</view>
+
+
+
+ <include src="/lashou/common/common" />

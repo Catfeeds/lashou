@@ -1,0 +1,49 @@
+<view class='douyin-sources' style='background:#ffffff;'>
+  <view style='display:flex; align-items:center; line-height:180%; padding:16rpx; background:#f5f5f5;'>
+    <text style='flex:1; font-weight:bold'>参赛选手抖音视频回顾</text>
+    <text style='color:#f8739f'>全部 ></text>
+  </view>
+  <view style='display:flex;'>
+    <view style='text-align:center; flex:1; padding:16rpx;'>
+      <view style='background:#e4e4e4; height:220rpx; padding-top:100rpx'>选手视频1</view>
+      <view style='font-size:small; line-height:150%'>选手视频1</view>
+    </view>
+    <view style='text-align:center; flex:1; padding:16rpx;'>
+      <view style='background:#e4e4e4; height:220rpx; padding-top:100rpx'>选手视频2</view>
+      <view style='font-size:small; line-height:150%'>选手视频2</view>
+    </view>
+    <view style='text-align:center; flex:1; padding:16rpx;'>
+      <view style='background:#e4e4e4; height:220rpx; padding-top:100rpx'>选手视频3</view>
+      <view style='font-size:small; line-height:150%'>选手视频3</view>
+    </view>
+  </view>
+</view>
+
+<view style='padding:16rpx; background:#ffffff; margin-top:16rpx;'>
+  <button style='margin:16rpx;' bindtap='gotoVote'>官方人气投票通道</button>
+
+  <button style='margin:16rpx;' bindtap='viewToupiao'>了解一下赛制进程</button>
+</view>
+
+
+<view class='other-sources' style='background:#ffffff;'>
+  <view style='display:flex; align-items:center; line-height:180%; padding:16rpx; background:#f5f5f5;'>
+    <text style='flex:1; font-weight:bold'>月度、季度、年度视频及照片</text>
+    <text style='color:#f8739f'>全部 ></text>
+  </view>
+  <view style='display:flex;'>
+    <view style='text-align:center; flex:1; padding:16rpx;'>
+      <view style='background:#e4e4e4; height:220rpx; padding-top:100rpx'>视频或照片1</view>
+      <view style='font-size:small; line-height:150%'>视频或照片1</view>
+    </view>
+    <view style='text-align:center; flex:1; padding:16rpx;'>
+      <view style='background:#e4e4e4; height:220rpx; padding-top:100rpx'>视频或照片2</view>
+      <view style='font-size:small; line-height:150%'>视频或照片2</view>
+    </view>
+    <view style='text-align:center; flex:1; padding:16rpx;'>
+      <view style='background:#e4e4e4; height:220rpx; padding-top:100rpx'>视频或照片3</view>
+      <view style='font-size:small; line-height:150%'>视频或照片3</view>
+    </view>
+  </view>
+</view>
+<include src="/lashou/common/common" />

@@ -1,0 +1,32 @@
+<view class='ls-toupiao-list-count'>
+  当前参与人数 {{player_count}}
+</view>
+<view style='padding:16rpx; font-size:large; display:flex; align-items:center'>
+  <text>选手排行榜</text>
+  
+  <form bindsubmit='doSearch' style='flex:1'>
+    <view style='padding:0 32rpx; display:flex; align-items:center;'>
+      <input name="keywords" placeholder='请输入选手关键词' style='flex:1'></input>
+      <button formType="submit">搜索</button>
+    </view>
+  </form>
+  
+</view>
+
+<view class='player-tab'>
+  <view class='player-tab_item player-tab_sum {{vote_type == 0 ? "player-tab_active" : ""}}' id='player-tab_sum' data-vote-type="0" bindtap='toggleType'>综合投票</view>
+  <view class='player-tab_item player-tab_vote {{vote_type == 1 ? "player-tab_active" : ""}}' id='player-tab_vote' data-vote-type="1" bindtap='toggleType'>观众投票</view>
+  <view class='player-tab_item player-tab_weight {{vote_type == 2 ? "player-tab_active" : ""}}' id='player-tab_weight' data-vote-type="2" bindtap='toggleType'>体脂投票</view>
+</view>
+
+<view class='players'>
+  <view class='player' wx:for="{{player_list}}">
+    <view class='player-avatar'><image src='{{item.avatar}}'></image></view>
+    <view class='player-nickname'>{{item.username}}</view>
+    <view class='player-tickets'>{{item.vote_viewer}}票</view>
+    <view class='player-vote' data-player-user-id='{{item.uid}}' bindtap='vote'>投票</view>
+  </view>
+</view>
+
+<view style='height:1200rpx;'></view>
+<include src="/lashou/common/common" />

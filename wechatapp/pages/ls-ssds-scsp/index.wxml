@@ -1,0 +1,8 @@
+<view class="section tc">
+  <video  style='width:100%;height:1100rpx;' src="https://api.anmeila.com.cn/statics/images/ssds/ssdsscsp.mp4"   controls ></video>
+</view>
+
+<view class='update-weight'>
+  <input class='weight-input' type='digit' placeholder='请输入体重' bindblur='setupWeight'></input>
+  <button class="upload-btn"   bindtap="upVideoSubmit">上传视频</button>
+</view>

@@ -1,0 +1,63 @@
+<view class='ls-hongbao-shared'>
+  <view class='ls-hongbao-shared_title'>邀请好友领现金</view>
+  <view class='ls-hongbao-box ls-hongbao-title'>
+    <view class='ls-hongbao-val'>
+      <text>￥{{left_amount}}</text>
+      <text class='text-btn' bindtap='viewHongbaoLog'>明细</text>
+      
+    </view>
+     <view class='ls-hongbao-share'>
+       <button open-type="share" type="share"></button>
+    </view> 
+     <view class='ls-hongbao-sharetips'>每邀请一位好友，TA得5元，你得现金</view>
+    <!-- <view class='ls-hongbao-sharetips'>{{share_tips}}</view> -->
+  </view>
+
+  <view class='ls-hongbao-box ls-hongbao-logs' wx:if="{{can_cash}}">
+    <view class='ls-hongbao-handle' style='margin-top:0'>
+      <button bindtap='onCash'>我要提现</button>
+      <!--<button bindtap='viewToupiaoHome'>我要了解比赛</button>-->
+    </view>
+  </view>
+
+  <view style='text-align:center;' class='ls-hongbao-box' wx:else>
+    <view class='cash-tips ls-hongbao-sharetips' style='line-height:80rpx; padding 0 auto;'><b>⇊</b>{{cash_tips}}<b>⇊</b></view>
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/help.png' style='width:60rpx; height:60rpx; position:absolute; right:32rpx; top:32rpx;' bindtap='openrule'></image>
+    <navigator url='/pages/bundles/bundles'>
+      <image src='https://api.anmeila.com.cn/uploads/image/2b/2bdac297c5e134c592e5c78ad221a7ca.jpg' style='width:100%' mode='widthFix'></image>
+    </navigator>
+  </view>
+
+  <!--<view class='ls-hongbao-box ls-hongbao-players clearfix'>
+    <view class='ls-hongbao-player' wx:for="{{player_list}}">
+      <image src='{{item.avatar}}'></image>
+      <view>{{item.username}}</view>
+      <view>综合票数 {{item.vote_sum}}</view>
+      <view>投票数 {{item.vote_viewer}}</view>
+      <view>体脂 {{item.vote_weight}}</view>
+    </view>
+  </view>-->
+  <view class='guess-like' style='margin:16rpx 40rpx; background:#fff; border-radius:10rpx;'>
+    <navigator class='guess-like-goods' wx:for="{{guessLike}}" url='/pages/goods/goods?id={{item.id}}' style='width:335rpx;'>
+      <image src='{{item.pic_url}}' mode='widthFix'></image>
+      <view class='guess-like-name'>{{item.name}}</view>
+      <view class='guess-like-price'>￥{{item.price}}</view>
+    </navigator>
+  </view>
+</view>
+<view class="ls-modal {{show_cash_error ? 'show' : ''}}" bindtap='closeCashError'>
+  <view class='ls-modal_main'>
+    <view style='line-height:200%; text-align:center; font-size:large'>温馨提示</view>
+    <!-- <view style='padding:32rpx; line-height:200%;'>{{cash_error}}</view> -->
+    <view style='padding:32rpx; line-height:200%;'>{{cash_error}}</view>
+   <button  open-type="share" type="share" style='margin:16rpx;'>邀请好友领现金，足额提现</button>
+  </view>
+</view>
+<view class="ls-modal {{show_rules ? 'show' : ''}}" bindtap='closeRules'>
+  <view class='ls-modal_main'>
+  <view style='line-height:60rpx; text-align:center; font-size:large'>全新红包规则</view>
+     <text style='line-height:150%;'>{{rules}}</text>
+    <button  style='margin:16rpx 0;'>我知道了</button>
+  </view>
+</view>
+<include src="/lashou/common/common" />

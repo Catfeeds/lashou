@@ -1,0 +1,40 @@
+/* pages/anmeila/anmeila.wxss */
+
+.anmeila-title{
+  font-size: large;
+  text-align: center;
+  color: #d98ba9;
+  margin: 60rpx 0;
+}
+
+.anmeila-info{
+  margin-top: 16rpx;
+  background: #fff;
+}
+
+.anmeila-info .anmeila-hd{
+  text-align: center;
+  padding: 16rpx 0;
+  border-bottom: 1rpx dashed #e4e4e4;
+}
+
+.anmeila-info .anmeila-bd .anmeila-profile{
+  display: flex;
+  line-height: 88rpx;
+}
+
+.anmeila-info .anmeila-bd .anmeila-profile .anmeila-lable{
+  width: 140rpx;
+  text-align: right;
+  opacity: 0.8;
+}
+
+.anmeila-info .anmeila-bd .anmeila-profile .anmeila-val{
+  flex: 1;
+  margin-left: 32rpx;
+}
+
+.anmeila-jihuo{
+  margin-top: 100rpx;
+  text-align: center;
+}

@@ -1,0 +1,31 @@
+.hongbao-main{
+  position: relative;
+  width: 454rpx;
+  height: 575rpx;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0;
+}
+
+.hongbao-main .hongbao-title{
+  padding-top: 240rpx;
+  font-size: small;
+}
+
+.hongbao-main .hongbao-value{
+  line-height: 200%;
+  font-size: x-large;
+}
+
+.hongbao-main button{
+  /*margin: 20rpx;
+  border-top-left-radius: 0 50%;
+  border-bottom-left-radius: 0 50%;*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  color:rgba(0,0,0,0);
+}

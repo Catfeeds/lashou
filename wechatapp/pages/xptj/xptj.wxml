@@ -1,0 +1,6 @@
+<!--pages/xptj/xptj.wxml-->
+<view class="goods-list">
+    <navigator url="/pages/goods/goods?id={{item.id}}" open-type="navigate" wx:for="{{goods_list}}" class="goods-item" style='font-size:11pt;'>
+        <image class="goods-pic" src="https://api.anmeila.com.cn/statics/images/xptj/{{item.id}}.png?r={{random}}" mode="widthFix" style='width:100%;'/>
+    </navigator>
+</view>

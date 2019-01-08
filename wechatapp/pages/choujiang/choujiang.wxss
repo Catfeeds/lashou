@@ -1,0 +1,26 @@
+/* pages/choujiang/choujiang.wxss */
+page{
+  color:red;
+  background-image: url(https://api.anmeila.com.cn/statics/images/choujiang/choujiang-bg.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: #00ff00;/*c3382f*/
+}
+
+.choujiang-prize-list{
+  margin: 40rpx;
+  background: #ffffff;
+}
+.choujiang-prize-list .choujiang-prize{
+  width: 33.33%;
+  display: inline-block;
+  padding: 16rpx;
+}
+.choujiang-prize-list .choujiang-prize-item{
+  background: #ff0000;
+  height: 200rpx;
+  color: #fff;
+}
+.choujiang-prize-list .choujiang-prize-item.active{
+  background: #10f501;
+}

@@ -1,0 +1,13 @@
+page{
+  background-image: url(https://api.anmeila.com.cn/statics/images/ssds/bundles-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+}
+.bundle-item{
+ margin-bottom: 32rpx;
+}
+.banner{
+
+
+}

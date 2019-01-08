@@ -1,0 +1,14 @@
+<view class="frame">
+  <view class='main'>
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/join_1.png?v=20180523' mode='widthFix'></image>
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/join_2.png?v=20180523' mode='widthFix'></image>
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/join_3.png?v=20180523' mode='widthFix'></image>
+  </view>
+  <view class='handle'>
+    <navigator wx:if='{{has_viewer_mobile}}'  class='btn' url='/pages/ls-toupiao-list/ls-toupiao-list'>我要围观</navigator>
+    <button wx:else class='btn'  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >我要围观</button>
+    <view class='btn' bindtap='joinSsds' wx:if="{{canJoin}}">我要参赛</view>
+    <view class='btn' bindtap='gotoPlayerCenter' wx:else>选手中心</view>
+  </view>
+</view>
+<include src="/lashou/common/common" />

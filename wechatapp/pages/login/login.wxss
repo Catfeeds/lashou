@@ -1,0 +1,23 @@
+page{
+  background: 
+}
+.ls-login_handle button{
+  display: flex;
+  background: #d98ba9;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.ls-login_handle button image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 16rpx;
+}
+
+.ls-login_handle button view{
+}
+
+.ls-login_title{
+  font-size: large;
+}

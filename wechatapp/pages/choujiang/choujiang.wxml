@@ -1,0 +1,38 @@
+<!--pages/choujiang/choujiang.wxml-->
+<include src="/commons/extension/extension" />
+<view class='choujiang-main'>
+  <view class='choujiang-prize-list'>
+    <view class='choujiang-prize'>
+      <view class='choujiang-prize-item {{roll_index == 0 ? "active" : ""}}'>0 - {{prize_list[0].prize_id}}</view>
+    </view>
+    <view class='choujiang-prize'>
+      <view class='choujiang-prize-item {{roll_index == 1 ? "active" : ""}}'>1 - {{prize_list[1].prize_id}}</view>
+    </view>
+    <view class='choujiang-prize'>
+      <view class='choujiang-prize-item {{roll_index == 2 ? "active" : ""}}'>2 - {{prize_list[2].prize_id}}</view>
+    </view>
+    <view class='choujiang-prize'>
+      <view class='choujiang-prize-item {{roll_index == 7 ? "active" : ""}}'>7 - {{prize_list[7].prize_id}}</view>
+    </view>
+    <view class='choujiang-prize' bindtap='beginChoujiang'>
+      <view class='choujiang-prize-item'>{{choujiang_count > 0 ? "clickme" : "明日再来"}}</view>
+    </view>
+    <view class='choujiang-prize'>
+      <view class='choujiang-prize-item {{roll_index == 3 ? "active" : ""}}'>3 - {{prize_list[3].prize_id}}</view>
+    </view>
+    <view class='choujiang-prize'>
+      <view class='choujiang-prize-item {{roll_index == 6 ? "active" : ""}}'>6 - {{prize_list[6].prize_id}}</view>
+    </view>
+    <view class='choujiang-prize'>
+      <view class='choujiang-prize-item {{roll_index == 5 ? "active" : ""}}'>5 - {{prize_list[5].prize_id}}</view>
+    </view>
+    <view class='choujiang-prize'>
+      <view class='choujiang-prize-item {{roll_index == 4 ? "active" : ""}}'>4 - {{prize_list[4].prize_id}}</view>
+    </view>
+  </view>
+</view>
+<view>还有 {{choujiang_count}} 次抽奖机会</view>
+<button open-type='share'>
+  <block wx:if="{{left_share_count > 0}}">分享获得更多机会 +{{left_share_count}}</block>
+  <block wx:else>喊好友一起抽奖</block>
+</button>

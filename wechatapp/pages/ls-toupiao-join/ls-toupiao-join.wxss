@@ -1,0 +1,43 @@
+.frame{
+  position: fixed;
+  left: 0;
+  top: 0;
+  /*background: #ff0000;*/
+  width: 100%;
+  height: 100%;
+
+  padding-bottom: 88rpx;
+}
+
+.frame .main{
+  height: 100%;
+  overflow-y: scroll;
+  background: url(https://api.anmeila.com.cn/statics/images/ssds/join_bg.png);
+  background-size: 750rpx 1438rpx;
+}
+
+.frame .main image{
+  width: 750rpx;
+  margin-bottom: 16rpx;
+}
+
+.frame .handle{
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  background: url(https://api.anmeila.com.cn/statics/images/ssds/join_bottom_bg.png);
+  background-size: cover;
+}
+
+.frame .handle .btn{
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  background: transparent;
+  border: none;
+}
+.frame .handle .btn::after{
+  border: none
+}

@@ -1,0 +1,3 @@
+<!--pages/partner/orders/orders.wxml-->
+<text>pages/partner/orders/orders.wxml</text>
+<include src="/lashou/common/common" />

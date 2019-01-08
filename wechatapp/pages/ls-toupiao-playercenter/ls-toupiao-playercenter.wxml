@@ -1,0 +1,170 @@
+<view  wx:if="{{!showModal}}" style='padding-bottom:100rpx;'>
+
+<view class="jfsc" bindtap='gotoJfsc'>
+<image src='https://api.anmeila.com.cn/statics/images/ssds/jfsc.jpg'  style='width:100%' mode='widthFix'/>
+</view>
+
+<view class='be-agent' wx:if="{{!user_info.is_distributor}}">
+  <button bindtap='goto298'>购买298 成为代理</button>
+</view>
+
+<view class='player-center' wx:if='{{player_info}}'>
+  <view class='player-avatar'>
+    <view class='avatar'><image src='{{player_info.avatar}}'/></view>
+    <view class='player-name'>{{player_info.username}}</view>
+    <view class='vote-val-wrapper'>
+      <view class='vote-val sum'><view class="val">{{player_info.vote_sum}}</view><view class="label">综合</view></view>
+      <view class='vote-val viewer'><view class="val">{{player_info.vote_viewer}}</view><view class="label">观众</view></view>
+      <view class='vote-val weight'><view class="val">{{player_info.vote_weight}}</view><view class="label">体脂</view></view>
+    </view>
+  </view>
+
+  <view class='handle'><view class='edit-profile' bindtap="editSubmit">修改资料</view></view>
+  <view class='handle'><view class='upload-video' bindtap="upVideoSubmit">上传视频</view></view>
+  <view class='handle'><view class='lapiao'  bindtap="showShareModal" >我要拉票</view></view>
+  <!--<view class='handle'><view class='qiandao' bindtap="qiandao">每日签到</view></view>-->
+
+
+</view>
+
+<view class='be-player' wx:else>
+  <button bindtap='goto216'>我要参赛</button>
+</view>
+<image style='width:100%; position:fixed; left:0; bottom:0' mode='widthFix' src='https://api.anmeila.com.cn/statics/images/ssds/player-center-footer.jpg?v=201805241625'></image>
+</view>
+
+<!--弹窗-->
+
+ <form bindsubmit="formSubmit" report-submit='true'>
+<view  wx:if="{{showModal}}">
+  <view class="modal-title">编辑资料</view>
+  <view class="modal-content">
+<view class="page-body">
+
+  <view class="page-section">
+    <view class="weui-cells__title">姓名</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" name="name" value="{{player_info.name}}" placeholder="请输入真实姓名"/>
+      </view>
+    </view>
+  </view>
+
+
+
+ <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">点击可预览选好的图片</view>
+                  <view class="weui-uploader__info">{{form.imageList.length}}/{{count[countIndex]}}</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{form.imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+         </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box">
+         <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            </view>
+              </view>
+           </view>
+        </view>
+    </view>
+</view>
+
+  <view class="page-section">
+    <view class="weui-cells__title">参赛宣言</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" name="xuanyan" value="{{player_info.declaration}}" placeholder="请输入您的参赛宣言"/>
+      </view>
+    </view>
+  </view>
+  
+  </view>
+  </view>
+ 
+
+
+  <view style='padding-left:20px;padding-right:20px;'>
+    <button type="default" style='width:45%;float:left' bindtap="onCancel" data-status="cancel" plain="true">取消</button>
+    <button type="primary" style='width:45%;float:right' plain="true" formType="submit">确定</button>
+  </view>
+</view>
+ </form>
+
+
+
+
+ 
+<view class="share-modal {{share_modal_active}}">
+    <view class="share-modal-body">
+        <view class="flex-row">
+            <view class="flex-grow-1 flex-x-center">
+                <button open-type="share" data-id="1" class="share-bottom">
+                    <image src="/images/icon-share-friend.png"></image>
+                    <view>分享给朋友</view>
+                </button>
+            </view>
+            <view class="flex-grow-1 flex-x-center">
+                <button open-type="share" data-id="2" class="share-bottom">
+                    <image src="/images/icon-share-friend.png"></image>
+                    <view>分享到群</view>
+                </button>
+            </view>
+            <view class="flex-grow-1 flex-x-center">
+                <view bindtap="getGoodsQrcode" class="share-bottom">
+                    <image src="/images/icon-share-qrcode.png"></image>
+                    <view>生成海报</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="shareModalClose" class="share-modal-close flex-y-center flex-x-center">关闭</view>
+    </view>
+</view>
+
+<view class="goods-qrcode-modal {{goods_qrcode_active}}">
+    <view class="goods-qrcode-body flex-col">
+        <view class="flex-grow-1" style="position: relative">
+            <view style="position: absolute;left: 0;top:0;width: 100%;height: 100%;padding: 100rpx 100rpx 60rpx"><radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" wx:for="{{items}}">
+    <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </label>
+</radio-group>
+                <view class="goods-qrcode-box">
+                    <view class="goods-qrcode-loading flex-x-center flex-y-center">
+                        <view class="flex-x-center flex-col">
+                            <image style="width: 150rpx;height: 150rpx" src="/images/loading2.svg"></image>
+                            <view style="color: #888">海报生成中</view>
+                        </view>
+                    </view>
+                    <image bindtap="goodsQrcodeClick" mode="aspectFill" class="goods-qrcode {{goods_qrcode?'active':''}}" data-src="{{goods_qrcode}}" src="{{goods_qrcode}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="flex-grow-0 flex-col flex-x-center" style="padding: 0 60rpx 80rpx">
+            <view style="margin-bottom: 0rpx;padding: 0 40rpx">
+                <button wx:if="{{goods_qrcode}}" data-no='1' bindtap="saveGoodsQrcode" style="background: #ff4544;color: #fff;margin-bottom: 5rpx;">
+                    保存图片
+                </button>
+                <button wx:else style="opacity: .4">保存图片</button>
+                <!-- <button  bindtap="saveGoodsQrcode"  data-no='2' style="background: #ff4544;color: #fff;margin-bottom: 5rpx;">
+                    保存图片二
+                </button>
+                <button  bindtap="saveGoodsQrcode" data-no='3' style="background: #ff4544;color: #fff;margin-bottom: 5rpx;">
+                    保存图片三
+                </button> -->
+            </view>
+            <!-- <view style="color: #888;font-size: 9pt;text-align: center">保存至相册</view> -->
+        </view>
+        <view class="goods-qrcode-close" bindtap="goodsQrcodeClose">
+            <image src="/images/icon-close2.png" style="width: 50rpx;height: 50rpx;display: block"></image>
+        </view>
+    </view>
+</view>
+ <include src="/lashou/common/common" />

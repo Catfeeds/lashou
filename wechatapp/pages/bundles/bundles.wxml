@@ -1,0 +1,43 @@
+<view class="bundle-item" bindtap='buyBundle' wx:if="{{ssds}}">
+  <view class='banner'>
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/bundles-bundle-banner.png?v=201805253' mode="widthFix" style='width:100%' />
+  </view>
+
+  <view class='profit'>
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/bundles-bundle-profit.png?v=201805253' mode="widthFix" style='width:100%' />
+  </view>
+
+  <!--<button style='margin-top:16rpx; background:#f8739f; border:none; border-radius:0rpx;color:#ffffff'>购买套餐</button>-->
+</view>
+
+<view class="bundle-item"  bindtap='buy216' wx:if="{{ssds}}">
+  <view class='banner'>
+     <image src='https://api.anmeila.com.cn/statics/images/ssds/bundles-216-banner.png?v=201805253' mode="widthFix" style='width:100%' />
+  </view>
+
+  <view class='profit'>
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/bundles-216-profit.png?v=201805253' mode="widthFix" style='width:100%' />
+  </view>
+
+  <!--<button style='margin-top:16rpx; background:#f8739f; border:none; border-radius:0rpx;color:#ffffff'>购买216</button>-->
+</view>
+
+<view class="bundle-item"  bindtap='buy298'>
+  <view class='banner'>
+     <image src='https://api.anmeila.com.cn/statics/images/ssds/bundles-298-banner.png?v=201805253' mode="widthFix" style='width:100%' />
+  </view>
+
+  <view class='profit'>
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/bundles-298-profit.png?v=201805253' mode="widthFix" style='width:100%' />
+  </view>
+
+  <!--<button style='margin-top:16rpx; background:#f8739f; border:none; border-radius:0rpx;color:#ffffff'>购买298</button>-->
+</view>
+
+<view style="background: #fff;">
+    <import src="../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
+
+
+<include src="/lashou/common/common" />

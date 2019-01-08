@@ -1,0 +1,27 @@
+<button class='go-index' bindtap='goIndex'>回到首页</button>
+<view class="ls-toupiao-share">
+  <view class='ls-toupiao-share_box ls-toupiao-share_desc'>
+    <view class='player-info'>
+      <image src='{{player_info.avatar}}' style=''></image>
+      <view style='white-space:nowrap'>{{player_info.username}}</view>
+    </view>
+    <view style='height:140rpx;'></view>
+    <view style='padding:16rpx; text-align:center;' class='player-info_declaration'>{{player_info.declaration == null ? "帮我投一票" : player_info.declaration}}</view>
+    <navigator style='text-align:center;' url='{{link_url}}'>
+      <image src='https://api.anmeila.com.cn/statics/images/ssds/toupiao_ad.png?v=20180525' style='width:98%;' mode='widthFix'></image>
+    </navigator>
+  </view>
+
+  <view class='ls-toupiao-player-count'>当前参与人数 {{player_count}}</view>
+
+  <view class='toupiao-handle'>
+    <button class='toupiao-handle_vote' bindtap='vote'>帮TA投一票</button>
+    <button class='toupiao-handle_share' open-type="share" type="share">我要围观</button>
+  </view>
+  <view class='toupiao-tips'>人多力量大，快喊小伙伴们来帮忙!</view>
+
+  <view style='margin:16rpx;'>
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/lapiao-rules.png?v=060803' style=' width:100%;' mode='widthFix'></image>
+  </view>
+</view>
+<include src="/lashou/common/common" />

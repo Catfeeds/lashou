@@ -1,0 +1,48 @@
+.ls-hongbao-log{
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+}
+.ls-hongbao-log_item{
+  background-color: #ffffff;
+  margin-bottom: 16rpx;
+  padding: 0 16rpx;
+  display: flex;
+  align-items: center;
+}
+.ls-hongbao-log_item .ls-hongbao-log_meta{
+  flex: 1;
+}
+.ls-hongbao-log_item .ls-hongbao-log_amount{
+  padding: 32rpx;
+}
+
+.ls-hongbao-summary{
+  background-color: #f8739f;
+  color: #ffffff;
+  text-align: center;
+  padding: 32rpx;
+  position: relative;
+}
+.ls-hongbao-summary button{
+  position: absolute;
+  right: 32rpx;
+  top: 32rpx;
+}
+.ls-hongbao-summary .ls-hongbao-total .label{
+  font-size: xx-small;
+}
+.ls-hongbao-summary .ls-hongbao-total .val{
+  font-size: xx-large;
+}
+.ls-hongbao-summary .ls-hongbao-detail{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16rpx;
+}
+.ls-hongbao-summary .ls-hongbao-detail .ls-hongbao-part{
+  /*text-align: center;*/
+  flex: 1;
+}
+.ls-hongbao-summary .ls-hongbao-detail .ls-hongbao-part .lable{
+  font-size: xx-small;
+}

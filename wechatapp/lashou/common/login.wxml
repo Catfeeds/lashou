@@ -1,0 +1,6 @@
+<view class="ls-login {{ls_login_show ? 'show' : ''}}">
+  <view class='ls-login_main'>
+    <view class='ls-login_tips'>拉手想要获取您的微信昵称</view>
+    <view class='ls-login_handle'><button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">知道了</button></view>
+  </view>
+</view>

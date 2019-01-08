@@ -1,0 +1,79 @@
+<!--pages/anmeila/anmeila.wxml-->
+<block wx:if="{{user_info}}">
+
+<view class='anmeila-title'>您已激活， 欢迎回家<button wx:if="{{1}}" class="" style='float: right;background-color:transparent; .transButton{background-color:transparent;}' open-type="contact" plain="true">
+                    <view>
+                        <image style='width:64rpx;height:64rpx;' src="/images/icon-user-kf.png"></image>
+                        <text>客服</text>
+                    </view>
+                </button>
+
+</view>
+
+<view class='anmeila-info'>
+  <view class='anmeila-hd'>基本信息</view>
+  <view class='anmeila-bd'>
+    <view class='anmeila-profile'>
+      <view class='anmeila-lable'>姓名</view>
+      <view class='anmeila-val'>{{user_info.nickname}}</view>
+    </view>
+    <view class='anmeila-profile'>
+      <view class='anmeila-lable'>身份</view>
+      <view class='anmeila-val'>{{user_level}}</view>
+    </view>
+    <view class='anmeila-profile'>
+      <view class='anmeila-lable'>合伙人</view>
+      <view class='anmeila-val'>{{user_info.is_partner == 1 ? "是" : "否"}}</view>
+    </view>
+    
+  </view>
+</view>
+<view class='anmeila-hd'>
+    <view class='anmeila-profile'>
+      <button bindtap="removebd">解除激活</button>
+    </view>
+    </view>
+
+<view class='anmeila-info'>
+  <view class='anmeila-hd'>我的上级</view>
+  <view class='anmeila-bd'>
+    <view class='anmeila-profile'>
+      <view class='anmeila-lable'>姓名</view>
+      <view class='anmeila-val'>{{team.parent.user_name}}</view>
+    </view>
+    <view class='anmeila-profile'>
+      <view class='anmeila-lable'>状态</view>
+      <view class='anmeila-val'>{{team.parent.status == 1 ? "已激活" : "未激活"}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='anmeila-info'>
+  <view class='anmeila-hd'>一级 全部{{team.level_1.total}} 已激活{{team.level_1.active}}</view>
+  <view class='anmeila-bd'>
+    <view class='anmeila-profile' wx:for="{{team.level_1.list}}">
+      <view class='anmeila-lable'>{{item.nickname ? item.nickname : item.user_name}}</view>
+      <view class='anmeila-val'>{{item.wechat_open_id == '' ? "未激活" : "已激活"}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='anmeila-info'>
+  <view class='anmeila-hd'>二级 全部{{team.level_2.total}} 已激活{{team.level_2.active}}</view>
+  <view class='anmeila-bd'>
+    <view class='anmeila-profile' wx:for="{{team.level_2.list}}">
+      <view class='anmeila-lable'>{{item.nickname ? item.nickname : item.user_name}}</view>
+      <view class='anmeila-val'>{{item.wechat_open_id == '' ? "未激活" : "已激活"}}</view>
+    </view>
+  </view>
+</view>
+</block>
+
+<block wx:else>
+  <navigator class='anmeila-jihuo' url='/pages/login/hellologin'>请激活您的安美拉账户</navigator>
+</block>
+<view class="flex-row bar-bottom">
+            <view class="flex-grow-0 flex-row">
+                
+                </view></view>
+                

@@ -1,0 +1,249 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2017/8/11
+ * Time: 16:07
+ */
+
+namespace app\modules\api\models;
+use app\models\Order;
+use app\models\OrderDetail;
+use app\models\Setting;
+use app\models\Share;
+use app\models\Ssdsplayer;
+use app\modules\api\models\ShareForm;
+use app\models\User;
+use app\models\ShareDetailed;
+
+
+/**
+ * By Wynters
+ * @property
+ */
+class PayComm extends Model
+{
+
+
+    public function payGo($order_id,$user_id)
+    {
+        //选手处理
+        $goods_list = OrderDetail::find()->where('order_id = '.$order_id)->asArray()->all();
+        $goods_num = 0;
+        $is_bundle = false;
+       // file_put_contents('/data/wwwroot/api.anmeila.com.cn/modules/api/models/123.txt','11111111111');
+        foreach ($goods_list as $key => $goods){
+            if($goods['goods_id'] == 199)
+                $goods_num +=$goods['num'];
+
+            if($goods['goods_id'] == 205){
+               // file_put_contents('/data/wwwroot/api.anmeila.com.cn/modules/api/models/222.txt','11111111111');
+                $this->autoToShare($user_id);
+                $is_bundle = true;
+            }
+        }
+        if($goods_num >= 2 || $is_bundle){
+            $uid = $user_id;
+            $userinfo = User::findOne(['id'=>$uid]);
+            $form = new Ssdsplayer();
+            $res = Ssdsplayer::findOne(['uid'=>$uid]);
+            if(empty($res)){
+                $form->avatar = $userinfo->avatar_url;
+                $form->username = $userinfo->nickname;
+                $form->add_time = time();
+                $form->uid = $uid;
+                $form->save();
+            }
+
+            // return json_encode(array('code'=>0,'msg'=>'success'));
+        }
+
+
+
+
+    }
+
+    public function autoRebate($user_id,$order_price,$rebate,$is_order = 0){
+
+
+        if($rebate == 0)
+            return 0;
+
+        $addtime = 0;
+        $is_auto = 0;
+       // $is_order = 0;
+        $share = Share::findOne(['user_id'=>$user_id]);
+
+        if(!empty($share))
+           $addtime = $share->addtime;
+
+        //计算历史累计金额
+        $total_price = Order::find()
+            ->where('is_pay = 1 AND `user_id` = '.$user_id.' AND `addtime` >= '.$addtime)
+            ->sum('pay_price');
+        $user = User::findOne($user_id);
+
+
+        if($user->is_distributor != 1)
+            return 0;
+
+        if($total_price < 298){
+
+            $nowPrice = $total_price + $order_price;
+
+            if($nowPrice > 298){
+                //多余 = 现在累计 - 298
+                $surplusPrice = $nowPrice - 298;
+                //这次10% = 交易金额 - 多余
+                $thisPrice = $order_price - $surplusPrice;
+                //计算金额
+                $rebate = ($thisPrice * 0.1) + ($surplusPrice * 0.2);
+
+                $is_auto = 1;
+                $is_autoRebate = $thisPrice;
+
+            }else{
+                $rebate = $order_price * 0.1;
+                $is_auto = 1;
+                $is_autoRebate = $order_price;
+            }
+
+
+        }
+
+        if($is_order == 1)
+            return (object)['rebate' => $rebate,'is_auto' => $is_auto,'autoRebate' => $is_autoRebate];
+
+        return $rebate;
+
+
+
+    }
+
+    /**
+     * @param $user_id
+     * @return string
+     */
+    public function autoToShare($user_id)
+    {
+        //file_put_contents('/data/wwwroot/api.anmeila.com.cn/modules/api/models/333.txt','111');
+        //get this member info
+        $member = User::findOne($user_id);
+        if(!empty($member)){
+            //file_get_contents('/data/wwwroot/api.anmeila.com.cn/modules/api/models/2.txt','12121');
+            // and no empty  find share
+            $shareMember = Share::findOne(['user_id'=>$member->id, 'store_id' => $member->store_id]);
+            if(empty($shareMember)){
+
+
+                $member->is_distributor = 1;
+                $member->level = 1;
+                $member->money += 298;
+
+                $share = new Share();
+
+                $share->store_id = $member->store_id;
+                $share->user_id = $member->id;
+                $share->status = 1;
+               // $share->agree = 1;
+                $share->name = $member->nickname;
+                $share->addtime = time();
+
+
+                if(!$share->save()){
+
+                    return [
+                        'code' => 1,
+                        'msg' => '分销商数据插入出错',
+                    ];
+                }
+               // file_get_contents('/data/wwwroot/api.anmeila.com.cn/modules/api/models/4.txt','12121');
+
+                $parent = User::findOne($member->parent_id);
+
+                if(!empty($parent)){
+
+                    $mod_ShareDetailed = new ShareDetailed;
+                    $mod_ShareDetailed->from_id = $member->id;
+                    $mod_ShareDetailed->user_id = $member->parent_id;
+                    $mod_ShareDetailed->store_id = $member->store_id;
+                    $mod_ShareDetailed->remarks = '推荐收益';
+
+                    if($parent['is_distributor'] == 1 && $parent['level'] == 1){
+                        $mod_ShareDetailed->price = 50;
+                        $parent->total_price += 50;
+                        $parent->price += 50;
+                    }
+                   // file_get_contents('/data/wwwroot/api.anmeila.com.cn/modules/api/models/5.txt','12121');
+                    if($parent['is_distributor'] == 1 && $parent['level'] == 2){
+                        $mod_ShareDetailed->price = 80;
+                        $parent->total_price += 80;
+                        $parent->price += 80;
+                    }
+                   // file_put_contents('/data/wwwroot/api.anmeila.com.cn/controllers/2.txt','11111');
+                    $fens1 = 0; $fens2 = 0;
+
+                    //计算全部一代
+                    $parent1Member = User::find()->where('`level` >= 1 AND `parent_id` = '.$member->parent_id)->asArray()->all();
+                    $fens1 = count($parent1Member);
+
+                    foreach ($parent1Member as $k => $v){
+                        $parentMember = User::find()->where(['parent_id'=>$v->id])->asArray()->all();
+                        $fens2 += count($parentMember);
+
+                    }
+
+
+
+                    $fensCount = $fens1 + $fens2;
+
+                    if($fens1 >= 15 && $fensCount >= 60)
+                        $parent->level = 2;
+
+
+
+
+                    if(!$parent->save()){
+
+                        return [
+                            'code' => 2,
+                            'msg' => '上级数据出错',
+                        ];
+                    }
+
+
+                    if(!$mod_ShareDetailed->saveS()){
+
+                        return [
+                            'code' => 3,
+                            'msg' => '返利数据出错',
+                        ];
+                    }
+
+
+                }
+
+                if($member->save()){
+
+                    return [
+                        'code' => 0,
+                        'msg' => '成功!',
+                    ];
+                }
+
+
+
+
+
+
+            }
+
+            $member->save();
+        }
+
+
+
+
+    }
+
+}

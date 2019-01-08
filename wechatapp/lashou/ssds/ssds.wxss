@@ -1,0 +1,22 @@
+.ssds-main{
+  position: relative;
+  width: 750rpx;
+  height: 696rpx;
+  color: #ffffff;
+  text-align: center;
+  background-size: cover;
+  background-image: url(https://api.anmeila.com.cn/statics/images/ssds/ssds.png);
+}
+
+.ssds-main button{
+  /*margin: 20rpx;
+  border-top-left-radius: 0 50%;
+  border-bottom-left-radius: 0 50%;*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  color:rgba(0,0,0,0);
+}

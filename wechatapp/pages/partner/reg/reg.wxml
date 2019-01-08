@@ -1,0 +1,114 @@
+<view class="step1" wx:if="{{user_info.is_partner==0}}">
+  <view class="info-bg">
+    <image src="https://api.anmeila.com.cn/statics/images/ssds/join_partner_banner.png" class="bg" style='width:100%;' mode='widthFix'/>
+  </view>
+
+  <form bindsubmit="formSubmit" report-submit='true'>
+    <view class="info">
+      <view class="info-label flex-row">
+        <view class="flex-y-center">
+          欢迎加入
+          <view class="info-red" style="width:260rpx; overflow: hidden;-webkit-line-clamp: 1;display: -webkit-box;-webkit-box-orient: vertical;">{{store.name}}</view>请填写申请信息
+        </view>
+      </view>
+
+      <!--<view class="info-label info-content flex-row">
+        <view class="info-left flex-y-center">邀请人</view>
+        <view class="info-right flex-row">
+          <view class="info-red flex-grow-0 flex-y-center">{{user_info.parent}}</view>
+          <view class="info-gray flex-group-1 flex-y-center">(请核对)</view>
+        </view>
+      </view>-->
+
+      <!--view class="info-label info-content flex-row">store
+        <view class="info-left flex-y-center required">姓名</view>
+        <view class="info-right flex-row flex-y-center">
+          <input class="name-input" name="name" placeholder="请填写真实姓名" value="{{form.name}}" />
+        </view>
+      </view-->
+
+      <!--view class="info-label info-content flex-row">
+        <view class="info-left flex-y-center required">手机号码</view>
+        <view class="info-right flex-row flex-y-center">
+          <button wx:if="{{form.phone_number == null}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+          <input wx:else class="mobile-input" type="number" name="phone_number" value="{{form.phone_number}}" />
+        </view>
+      </view-->
+
+<view class="info-label info-content flex-row">
+        <view class="info-right flex-row flex-y-center">
+           <view class="info-left flex-y-center required">安美拉帐号</view>
+          <input   class="name-input" type="text" name="uid" placeholder="代理帐号" value="{{form.uid}}" />
+        </view>
+      </view>
+
+<view class="info-label info-content flex-row">
+       
+        <view class="info-right flex-row flex-y-center">
+ <view class="info-left flex-y-center required">安美拉密码</view>
+          <input  class="name-input"  type="password" name="pwd"  placeholder="代理帐号所对应的密码" value="{{form.pwd}}" />
+        </view>
+      </view>
+
+
+
+
+      <view class="info-label info-content flex-row">
+        <view class="info-agree flex-row flex-y-center" bindtap="agree">
+          <input hidden="true" name="agree" value="{{agree}}"/>
+          <image src="{{img}}" style="width:32rpx;height:32rpx;"></image>
+          <text style="margin-left:10rpx;">我已经阅读并了解</text>
+          <view style="color:#014c8c" bindtap="agreement">【合伙人申请协议】</view>
+        </view>
+      </view>
+    </view>
+    <view class="info-btn flex-row">
+      <button class="flex-y-content info-btn-content" formType="submit">{{subName}}</button>
+    </view>
+  </form>
+  <view class="info">
+    <!--<view class="info-label flex-row">
+      <view class="flex-y-center">合伙人特权</view>
+    </view>
+
+    <view class="info-label info-height flex-row" wx:if="{{false}}">
+      <view class="flex-y-center">
+        <image src="/images/img-share-shop.png" class="info-icon"></image>
+      </view>
+      <view class="info-block">
+        <view class="info-top bold">独立小店</view>
+        <view class="info-bottom">拥有自己的小店及二维码</view>
+      </view>
+    </view>
+
+    <view class="info-label info-height flex-row">
+      <view class="flex-y-center">
+        <image src="/images/img-share-money.png" class="info-icon"></image>
+      </view>
+      <view class="info-block">
+        <view class="info-top bold">合伙人特权title</view>
+        <view class="info-bottom">合伙人特权detail</view>
+      </view>
+    </view>
+
+    <view class="info-label info-height flex-row">
+      <view class="flex-y-center info-block">合伙人特权 description</view>
+    </view>-->
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/partner_benifit.png' style='width:100%;' mode='widthFix'></image>
+  </view>
+</view>
+<view class="step2" wx:else>
+  <view class="info-bg" style="height:300rpx">
+    <image src="{{share_setting.pic_url_2}}" class="bg" />
+  </view>
+  <view class="info">
+    <view class="info-title">
+      <image class="info-images" src="/images/img-share-info.png"></image>
+    </view>
+    <view class="info-content">谢谢您的支持，请等待审核！</view>
+    <view class="flex-row info-btn1">
+      <navigator open-type="redirect" url="/pages/index/index" class="flex-y-content btn">去商城逛逛</navigator>
+    </view>
+  </view>
+</view>
+<include src="/lashou/common/common" />

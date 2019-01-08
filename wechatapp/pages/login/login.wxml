@@ -1,0 +1,13 @@
+<image src='https://api.anmeila.com.cn/statics/images/ssds/screen.png?v=053102' style='width:100%; height:100%; filter: blur(10px); position:fixed;'></image>
+<view class="ls-login show">
+  <view class='ls-login_main'>
+  <view class='ls-login_title'>欢迎</view>
+    <view class='ls-login_tips'>请允许授权后放心使用小程序，你的信息和数据将受到保护</view>
+    <view class='ls-login_handle'>
+      <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+        <image src='https://api.anmeila.com.cn/statics/images/ssds/wechat.png'></image>
+        <view>微信授权登录</view>
+      </button>
+    </view>
+  </view>
+</view>

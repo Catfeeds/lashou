@@ -1,0 +1,19 @@
+button{
+  background-color: #d98ba9;
+  color: #ffffff;
+  margin: 16rpx 64rpx;
+}
+button::after{
+  border: none;
+}
+.send298-code-val, .send298-code{
+  text-align: center;
+  line-height: 88rpx;
+  color: #999;
+}
+
+
+ .send298-code-val{
+   font-size: x-large;
+   color: #333;
+ }

@@ -1,0 +1,32 @@
+<view class="partner-list-title">
+  <image src=''></image>
+</view>
+
+<view class='partner-list-mine'>
+  <view class='partner-list-avatar'><image src='{{user_info.avatar}}' mode='widthFix'></image></view>
+  <view class='partner-list-nickname'>{{user_info.nickname}}</view>
+  <view class='partner-list-mine-position'>
+    <view class='label'>我的排名</view>
+    <view class='val'>{{user_info.position}}</view>
+  </view>
+  <view class='partner-list-mine-total'>
+    <view class='label'>我的招募数</view>
+    <view class='val'>{{user_info.total}}</view>
+  </view>
+</view>
+
+<view class='partner-list-item partner-list-hd'>
+  <view class='position'>排行</view>
+  <view class='nickname'>姓名</view>
+  <view class='total'>招募数</view>
+  <view class='active-num'>转化数</view>
+  <view class='active-rate'>转化率</view>
+</view>
+
+<view class='partner-list-item' wx:for="{{partner_list}}">
+  <view class='position'>{{index + 1}}</view>
+  <view class='nickname'>{{item.nickname}}</view>
+  <view class='total'>{{item.total}}</view>
+  <view class='active-num'>{{item.active_num}}</view>
+  <view class='active-rate'>{{item.active_rate}}</view>
+</view>

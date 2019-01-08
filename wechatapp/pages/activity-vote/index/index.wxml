@@ -1,0 +1,40 @@
+<view class="point_shop"><view class='text_center_shop'>积分商城（一张图片）</view></view>
+<view class="but_pay"><view class='text_center_pay'>
+<form bindsubmit="formSubmit" report-submit='true'>
+ <button type='primary' class="flex-y-content info-btn-content" formType="submit">支付298</button>
+ </form>
+ </view></view>
+
+<view>
+
+<view class='box_info'>
+<view style='margin-top:10px'></view>
+<view class='avater'>
+头像
+</view>
+<view style='margin-top:10px'></view>
+<view class='piaoshu'>
+票数
+</view>
+</view>
+<view class='user_info'>
+
+<view class='piaoshu'>
+<button type='primary' class="flex-y-content info-btn-content" bindtap="upVoiceSubmit">编辑资料</button>
+</view>
+<view style='margin-top:50px'></view>
+<view class='piaoshu'>
+<button type='primary' class="flex-y-content info-btn-content" bindtap="upVideoSubmit">上传视频</button>
+</view>
+<view style='margin-top:50px'></view>
+<view class='lapiao_but'>
+ <button type='primary' open-type="share" class="flex-y-content info-btn-content" formType="submit">我要拉票</button>
+</view>
+</view>
+
+
+
+
+
+
+</view>

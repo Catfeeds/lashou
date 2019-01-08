@@ -1,0 +1,20 @@
+<view class="ssds-timeline">
+  <view style='padding:16rpx; font-size:large'>月度、季度、年度大赛时间轴</view>
+  <view style='white-space:nowrap; overflow-y: scroll;'>
+    <view style='width:280rpx; height:200rpx; padding-top:90rpx; display:inline-block; text-align:center; background:#e4e4e4;'>时间轴1</view>
+    <view style='width:280rpx; height:200rpx; padding-top:90rpx; display:inline-block; text-align:center; background:#e4e4e4;'>时间轴2</view>
+    <view style='width:280rpx; height:200rpx; padding-top:90rpx; display:inline-block; text-align:center; background:#e4e4e4;'>时间轴3</view>
+    <view style='width:280rpx; height:200rpx; padding-top:90rpx; display:inline-block; text-align:center; background:#e4e4e4;'>时间轴4</view>
+    <view style='width:280rpx; height:200rpx; padding-top:90rpx; display:inline-block; text-align:center; background:#e4e4e4;'>时间轴5</view>
+    <view style='width:280rpx; height:200rpx; padding-top:90rpx; display:inline-block; text-align:center; background:#e4e4e4;'>时间轴6</view>
+  </view>
+</view>
+<view class="ssds-timeline">
+  <view style='padding:16rpx; font-size:large'>全程赛制进程</view>
+  <view style='height:400rpx; padding-top:190rpx; text-align:center; background:#e4e4e4;'>全程赛制进程1</view>
+  <view style='height:400rpx; padding-top:190rpx; text-align:center; background:#e4e4e4;'>全程赛制进程2</view>
+  <view style='height:400rpx; padding-top:190rpx; text-align:center; background:#e4e4e4;'>全程赛制进程3</view>
+  <view style='height:400rpx; padding-top:190rpx; text-align:center; background:#e4e4e4;'>全程赛制进程4</view>
+  <view style='height:400rpx; padding-top:190rpx; text-align:center; background:#e4e4e4;'>全程赛制进程5</view>
+</view>
+<include src="/lashou/common/common" />

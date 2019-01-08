@@ -1,0 +1,9 @@
+<view class="send298">
+  <view class='send298-banner'><image src='https://api.anmeila.com.cn/statics/images/ssds/send298_banner.png' mode='widthFix' style='width:100%;'></image></view>
+  <view class='send298-code'>您的激活码</view>
+  <view class='send298-code-val'>{{scene}}</view>
+  <view class='send298-handle'>
+    <button bindtap='activeCode'>免费激活分销商</button>
+    <button bindtap='gotoIndex'>回到首页</button>
+  </view>
+</view>
