@@ -1,0 +1,166 @@
+<include src="/commons/extension/extension" />
+<include src="/commons/navbar/navbar" />
+<view class="after-navber">
+  <view class='header' style='background-image: url(https://api.anmeila.com.cn/statics/images/ssds/uc-bg.png);'>
+    <view class='user-meta'>
+      <view class='avatar'><image src='{{user_info.avatar_url}}'></image></view>
+
+      <view class='nickname_user-level'>
+        <view class='nickname'>{{user_info.nickname}}</view>
+        <view class='user-level2-wrapper'>
+          <view class='user-level2'>
+            <image src='../../images/huangguan.png' mode='widthFix'></image>
+            <view class='level-label'>
+            {{user_info.level < 0 ? "普通" : (user_info.level == 1 ? "一星" : "二星")}}
+            {{user_info.is_partner > 0 ? "旗舰店" : ""}}
+            </view>
+            <image bindtap='gotoRecharge' class='recharge' src='../../images/recharge.png' mode='widthFix'></image>
+            <image bindtap='gotoQrcode' class='recharge' src='../../images/uc-qrcode.png' mode='widthFix' style='margin-left:16rpx;'></image>
+          </view>
+        </view>
+        
+      </view>
+
+      <view class='account'>
+        <view class='inte'>积分:{{user_info.integral}}分</view>
+        <view class='money'>余额:{{user_info.money}}元</view>
+      </view>
+    </view>
+    <view class='reward'>
+      <navigator url='/pages/share-order/share-order' class='reward-item today-sale'>
+        <view class='val'>{{myData.nowSales}}</view>
+        <view class='label'>今日销售额</view>
+      </navigator>
+
+      <navigator url='/pages/share/index' class='reward-item today-profit'>
+        <view class='val'>{{myData.sy_amount}}</view>
+        <view class='label'>今日收益</view>
+      </navigator>
+
+      <navigator url="/pages/share-team/share-team" class='reward-item team'>
+        <view class='val'>{{myData.team_count}}</view>
+        <view class='label'>我的团队</view>
+      </navigator>
+    </view>
+    <view class='handles'>
+      <navigator url='/pages/share/index' class='handle'><image src='../../images/btn_share.png' mode='widthFix'></image>分销中心</navigator>
+      <navigator url='/pages/share-team/share-team' class='handle'><image src='../../images/btn_team.png' mode='widthFix'></image>我的团队</navigator>
+    </view>
+  </view>
+
+  <view class='order-list user-module'>
+    <navigator url='/pages/order/order?status=-1' class='hd'>
+      <view class='label'>我的订单</view>
+      <view class='more'>全部订单</view>
+    </navigator>
+
+    <view class='bd entry-list'>
+      <navigator url='/pages/order/order?status=0' class='entry'>
+        <view class='icon'><image src="{{orders.status_0.icon?orders.status_0.icon:'/images/icon-order-0.png'}}"></image></view>
+        <view class='label'>{{orders.status_0.text?orders.status_0.text:'待付款'}}</view>
+        <view class='badge' wx:if="{{order_count.status_0 && order_count.status_0 > 0}}">{{order_count.status_0}}</view>
+      </navigator>
+
+      <navigator url="/pages/order/order?status=1" class='entry'>
+        <view class='icon'><image src="{{orders.status_1.icon?orders.status_1.icon:'/images/icon-order-0.png'}}"></image></view>
+        <view class='label'>{{orders.status_1.text?orders.status_1.text:'待发货'}}</view>
+        <view class='badge' wx:if="{{order_count.status_1 && order_count.status_1 > 0}}">{{order_count.status_1}}</view>
+      </navigator>
+
+      <navigator url="/pages/order/order?status=2" class='entry'>
+        <view class='icon'><image src="{{orders.status_2.icon?orders.status_2.icon:'/images/icon-order-0.png'}}"></image></view>
+        <view class='label'>{{orders.status_2.text?orders.status_2.text:'待收货'}}</view>
+        <view class='badge' wx:if="{{order_count.status_2 && order_count.status_2 > 0}}">{{order_count.status_2}}</view>
+      </navigator>
+
+      <navigator url="/pages/order/order?status=3" class='entry'>
+        <view class='icon'><image src="{{orders.status_3.icon?orders.status_3.icon:'/images/icon-order-0.png'}}"></image></view>
+        <view class='label'>{{orders.status_3.text?orders.status_3.text:'已完成'}}</view>
+      </navigator>
+
+      <navigator url="/pages/order/order?status=4" class='entry'>
+        <view class='icon'><image src="{{orders.status_4.icon?orders.status_4.icon:'/images/icon-order-0.png'}}"></image></view>
+        <view class='label'>{{orders.status_4.text?orders.status_4.text:'售后'}}</view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='mb-20'></view>
+
+  <view class='partner user-module'>
+    <navigator url="/pages/partner/center/center" class='hd'><view class='label'>旗舰店收益</view><view class='more'></view></navigator>
+    <view class='bd'>
+      <navigator url="/pages/partner/center/center" class='partner-item'>
+        <view class='val'>{{myData.now_shouyi}}元</view>
+        <view class='label'>今日收益</view>
+      </navigator>
+
+      <navigator url="/pages/partner/order/order" class='partner-item'>
+        <view class='val'>{{myData.need_send_goods}}单</view>
+        <view class='label'>待发货</view>
+      </navigator>
+
+      <navigator url="/pages/partner/order/order" class='partner-item'>
+        <view class='val'>{{myData.order_now}}单</view>
+        <view class='label'>今日订单</view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='training user-module'>
+    <view class='hd'><view class='label'>拉手商学院</view> <view class='more'></view></view>
+    <view class='bd'>
+      <navigator url="/pages/article-list/article-list?id=11&title=初级帮助" class='training-item'>
+        <image class='icon' src='https://api.anmeila.com.cn/statics/images/ssds/training1.png' mode='widthFix'></image>
+        初级帮助
+      </navigator>
+      <navigator url="/pages/article-list/article-list?id=12&title=进阶帮助" class='training-item'>
+        <image class='icon' src='https://api.anmeila.com.cn/statics/images/ssds/training2.png' mode='widthFix'></image>
+        进阶帮助
+      </navigator>
+      <navigator url="/pages/article-list/article-list?id=13&title=培训课件" class='training-item'>
+        <image class='icon' src='https://api.anmeila.com.cn/statics/images/ssds/training3.png' mode='widthFix'></image>
+        培训课件
+      </navigator>
+    </view>
+  </view>
+  <view class='user-module tools'>
+    <view class='hd'>必备工具 <view class='more'></view></view>
+    <view class='bd'>
+      <block wx:for="{{menus}}">
+        <view wx:if="{{item.open_type=='contact'}}" class="entry">
+          <view class='icon'><image src='{{item.icon}}' mode='widthFix'></image></view>
+          <view class='label'>{{item.name}}</view>
+          <button open-type="contact"  plain="true"></button>
+        </view>
+
+        <navigator wx:elif="{{item.open_type=='tel'}}" data-tel="{{item.tel}}" bindtap="removebd" class="entry">
+          <view class='icon'><image src='{{item.icon}}' mode='widthFix'></image></view>
+          <view class='label'>{{item.name}}</view>
+        </navigator>
+
+        <view wx:elif="{{item.open_type=='uc_id'}}" bindtap="ucId" data-user-id="{{user_info.id}}" class="entry">
+          <view class='icon'><image src='{{item.icon}}' mode='widthFix'></image></view>
+          <view class='label'>{{item.name}}</view>
+        </view>
+        <view wx:elif="{{item.open_type=='uc_setting'}}" bindtap="ucSetting" data-user-id="{{user_info.id}}" class="entry">
+          <view class='icon'><image src='{{item.icon}}' mode='widthFix'></image></view>
+          <view class='label'>{{item.name}}</view>
+        </view>
+
+        <navigator wx:else  url="{{item.url}}" class="entry">
+          <view class='icon'><image src='{{item.icon}}' mode='widthFix'></image></view>
+          <view class='label'>{{item.name}}</view>
+        </navigator>
+      </block>
+
+      <navigator url="/pages/ls-toupiao-playercenter/ls-toupiao-playercenter" class="entry">
+        <view class='icon'><image src='https://api.anmeila.com.cn/statics/images/user-center/icon-user-sc.png' mode='widthFix'></image></view>
+        <view class='label'>选手中心</view>
+      </navigator>
+    </view>
+  </view>
+
+  <include src="/commons/copyright/copyright.wxml" />
+</view>
+<include src="/lashou/common/common" />

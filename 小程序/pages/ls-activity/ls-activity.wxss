@@ -1,0 +1,155 @@
+/* pages/ls-activity/ls-activity.wxss */
+page{
+  background-color: #7b00ca;
+  background-image: url(https://api.anmeila.com.cn/statics/images/activity/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 750rpx 1752rpx;
+  padding-top: 282rpx;
+  font-size: 12px;
+}
+.activity-meta-wrapper{
+  text-align: center;
+}
+.activity-meta{
+  background-color: #6900b1;
+  color: #ffffff;
+  padding: 16rpx 32rpx;
+  display: inline-block;
+  border-radius: 32rpx;
+}
+.activity-meta .activity-title{
+  font-size: 16px;
+}
+
+.activity-meta .activity-time{
+  font-size: 10px;
+}
+
+.activity-timer{
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16rpx;
+}
+
+.activity-timer .icon{
+  width: 32rpx;
+  height: 32rpx;
+  background-image: url(https://api.anmeila.com.cn/statics/images/activity/timer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.activity-timer .label{
+  margin-left: 16rpx;
+  margin-right: 16rpx;
+}
+
+.activity-timer .time{
+  display: inline-block;
+  width: 58rpx;
+  height: 36rpx;
+  background: url(https://api.anmeila.com.cn/statics/images/activity/left-time-bg.png) no-repeat;
+  background-size: cover;
+  font-size: 10px;
+  text-align: center;
+  line-height: 36rpx;
+}
+
+.activity-timer .time-saperator{
+  display: inline-block;
+  height: 36rpx;
+  font-size: 10px;
+  text-align: center;
+  line-height: 36rpx;
+  margin-left: 6rpx;
+  margin-right: 6rpx;
+}
+
+.activity-person{
+  width: 690rpx;
+  height: 186rpx;
+  background-image: url(https://api.anmeila.com.cn/statics/images/activity/person-wrapper-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  margin-top: 16rpx;
+  overflow: hidden;
+  color: #fff;
+  padding: 24rpx;
+}
+
+.activity-person>view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68rpx;
+  line-height: 68rpx;
+}
+
+.activity-person .label{
+  margin-right: 32rpx;
+}
+
+.activity-person .part-int-val{
+  display: inline-block;
+  width: 40rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  text-align: center;
+  margin-right: 16rpx;
+  background-image: url(https://api.anmeila.com.cn/statics/images/activity/person-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 16px;
+  margin-top: 8rpx;
+}
+
+.activity-rule{
+  margin-top: 48rpx;
+  margin-bottom: 32rpx;
+  text-align: center;
+  color: #fff;
+}
+.activity-rule .bd{
+  margin-top: 16rpx;
+  font-size: 10px;
+}
+
+.handle .btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin: 32rpx;
+  margin-top: 16rpx;
+  background-color: #ff00d1;
+  border-radius: 16rpx;
+  padding: 16rpx;
+  font-size: 14px;
+}
+
+.handle .btn.disable{
+  background-color: #8c8c8c;
+}
+.handle .goto-handle{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 16rpx;
+  background-image: url(https://api.anmeila.com.cn/statics/images/activity/right.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.share-status{
+  display: inline-block;
+  position: absolute;
+  top: 32rpx;
+  right: 32rpx;
+
+  background:#ffffff;
+  border-radius: 16rpx;
+  padding: 16rpx;
+}

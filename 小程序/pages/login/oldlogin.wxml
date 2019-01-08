@@ -1,0 +1,115 @@
+<view   style='height: 100%;background-image: url(https://api.anmeila.com.cn/statics/images/ssds/oldlogin2.jpg);); no-repeat; background-position: center center; background-size: cover;padding: 700rpx 0;'>
+ <button wx:if="{{1}}" class="" style='margin-top :-350rpx;margin-bottom :280rpx;background-color:transparent; .transButton{background-color:transparent;}' open-type="contact" plain="true">
+                    <view>
+                        <image style='width:64rpx;height:64rpx;' src="/images/icon-user-kf.png"></image>
+                        <text>如有任何疑问点我联系客服</text>
+                    </view>
+                </button>
+<view class="step1">
+
+
+  <form bindsubmit="formSubmit" report-submit='true'>
+    <view class="info" >
+       <view class="info-label flex-row">
+        <view class="flex-y-center">
+          请输入相关的信息激活
+          <!-- <view class="info-red" style="width:260rpx; overflow: hidden;-webkit-line-clamp: 1;display: -webkit-box;-webkit-box-orient: vertical;">{{store.name}}</view>请填写老用户信息 -->
+        </view>
+      </view>  
+
+      <!-- <view class="info-label info-content flex-row">
+        <view class="info-left flex-y-center required">激活方式</view>
+        <view class="info-right flex-row flex-y-center">
+          <view class="section">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="picker">
+                {{array[index]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view> -->
+      <view class="info-label info-content flex-row">
+        <view class="info-left flex-y-center required">激活方式</view>
+        <view class="info-right flex-row flex-y-center">
+         <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{items}}">
+                <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </radio-group>
+        </view>
+      </view>
+        
+<block  wx:if="{{index==0}}">
+      <view class="info-label info-content flex-row">
+        <view class="info-left flex-y-center required">手机号码</view>
+        <view class="info-right flex-row flex-y-center">
+          <input  bindinput="phone_input"  class="name-input" type="text" name="phone" placeholder="手机号" value="{{form.phone}}" />
+            <button style='margin-left:-20rpx;' open-type="getphoneinfo"  bindtap="getphoneinfo">下一步</button>
+        </view>
+      </view>
+
+      <view class="info-label info-content flex-row"  wx:if="{{index==0}}"  wx:if="{{index2==1}}">
+        <view class="info-left flex-y-center required">验证码</view>
+        <view class="info-right flex-row flex-y-center">
+             <input  bindinput="mycode_input"  class="name-input" type="text" name="mycode" placeholder="验证码" value="{{form.uid}}" />
+            <button style='margin-left:-80rpx;' open-type="getcode"  disabled="{{is_delete == 0?flase:true}}"   bindtap="getcode">{{mycodestr}}</button>
+        </view>
+      </view>
+      </block>
+      
+<block  wx:if="{{index==1}}"> 
+      <view class="info-label info-content flex-row"  wx:if="{{index==1}}">
+        <view class="info-right flex-row flex-y-center">
+           <view class="info-left flex-y-center required">安美拉帐号</view>
+          <input class="name-input" type="text" name="user" placeholder="代理帐号" value="{{form.user}}" />
+        </view>
+      </view>
+
+<view class="info-label info-content flex-row">
+       
+        <view class="info-right flex-row flex-y-center"  wx:if="{{index==1}}">
+ <view class="info-left flex-y-center required">安美拉密码</view>
+          <input   bindinput="password_input"  class="name-input"  type="password" name="password"  placeholder="代理帐号所对应的密码" value="{{form.password}}" />
+        </view>
+      </view>
+</block>
+<view class='info-label info-content flex-row'>
+<view style="color:#014c8c" bindtap="notsms"   wx:if="{{index==0}}">收不到短信?</view>
+<view style="color:#014c8c" bindtap="notpws"   wx:if="{{index==1}}">忘记密码?</view>
+
+</view>
+
+
+      <!-- <view class="info-label info-content flex-row">
+        <view class="info-agree flex-row flex-y-center" bindtap="agree">
+          <input hidden="true" name="agree" value="{{agree}}"/>
+          <image src="{{img}}" style="width:32rpx;height:32rpx;"></image>
+          <text style="margin-left:10rpx;">我已经阅读并了解</text>
+          <view style="color:#014c8c" bindtap="agreement">【激活申请协议】</view>
+        </view>
+      </view> -->
+    </view>
+    <view class="info-btn flex-row">
+      <button class="flex-y-content info-btn-content" formType="submit">激活</button>
+    </view>
+  </form>
+  
+</view>
+<!-- <view class="step2">
+  <view class="info-bg" style="height:300rpx">
+    <image src="{{share_setting.pic_url_2}}" class="bg" />
+  </view>
+  <view class="info">
+    <view class="info-title">
+      <image class="info-images" src="/images/img-share-info.png"></image>
+    </view>
+    <view class="info-content">谢谢您的支持，请您的账号已激活！</view>
+    <view class="flex-row info-btn1">
+      <navigator open-type="redirect" url="/pages/index/index" class="flex-y-content btn">直接登录</navigator>
+    </view>
+  </view>
+</view> -->
+
+</view>
+<include src="/lashou/common/common" />

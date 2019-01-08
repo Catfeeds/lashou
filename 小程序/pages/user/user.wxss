@@ -1,0 +1,245 @@
+/* user.wxss */
+
+/* v2 start */
+.header{
+  height: 380rpx;
+  background-size: cover;
+  box-sizing: border-box;
+  padding: 16rpx;
+  color: #ffffff;
+  font-size: 12px;
+  position: relative;
+}
+
+.header .user-meta{
+  display: flex;
+  align-items: center;
+}
+
+.header .user-meta .avatar{
+  font-size: 0;
+}
+
+.header .user-meta .avatar image{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+.header .user-meta .nickname_user-level{
+  margin: 0 16rpx;
+  flex: 1;
+}
+
+.header .user-meta .nickname{
+  font-size: large;
+  margin-left: 4rpx;
+  max-width: 376rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header .user-meta .user-level2-wrapper{
+  position: relative;
+  height: 56rpx;
+  line-height: 56rpx;
+  margin-top: 16rpx;
+}
+.header .user-meta .user-level2{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 28rpx;
+  background-color: #d67f9c;
+  padding-left: 18rpx;
+  padding-right: 8rpx;
+}
+
+.header .user-meta .user-level2 image{
+  width: 32rpx;
+}
+.header .user-meta .user-level2 .level-label{
+  margin-left: 16rpx;
+}
+.header .user-meta .user-level2 image.recharge{
+  width: 48rpx;
+  margin-left: 32rpx;
+  margin-top: 5rpx;
+}
+
+.header .user-meta .account {
+  flex: 1;
+  text-align: left;
+  line-height: 56rpx;
+  max-width: 178rpx;
+  overflow: hidden;
+}
+
+.header .user-meta .account view{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-module{
+  background: #fff;
+  margin-top: 16rpx;
+  font-size: 12px;
+}
+
+.user-module .hd{
+  font-weight: bold;
+  padding: 0 16rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-module .hd .more{
+  color: #999;
+  display: flex;
+  align-items: center;
+  font-size: small;
+}
+.user-module .hd .more::after{
+  content: " ";
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  background-image: url(https://api.anmeila.com.cn/statics/images/ssds/right.png);
+  background-size: cover;
+}
+
+.entry-list{
+  display: flex;
+  align-items: center;
+  padding: 32rpx 0;
+}
+
+.entry-list .entry{
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.entry-list .entry image{
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.badge{
+  position:absolute;
+  top:-8rpx;
+  left:50%;
+  margin-left:12rpx;
+  display:inline-block;
+  background:#ef5397;
+  color:#fff;
+  border-radius:999rpx;
+  padding:0 8rpx;
+  min-width:40rpx;
+  font-size:7pt;
+}
+
+.header .reward{
+  display: flex;
+  align-items: center;
+  margin-top: 48rpx;
+}
+
+.header .reward .reward-item {
+  flex: 1;
+  text-align: center;
+}
+
+.header .handles{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 16rpx;
+}
+
+.header .handles .handle{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+}
+
+.header .handles .handle image{
+  width: 48rpx;
+  margin-right: 16rpx;
+}
+
+.training .bd{
+  display: flex;
+  align-items: center;
+  padding: 32rpx 0;
+}
+
+.training-item{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 16rpx;
+  border: 1px solid #f2f2f2;
+  border-radius: 6rpx;
+  margin: 0 16rpx;
+}
+.training-item image{
+  width: 32rpx;
+}
+.tools .bd{
+  padding-bottom: 16rpx;
+}
+.tools .entry{
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+}
+.tools .entry button{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+}
+.tools .entry .icon{
+  font-size: 0;
+  box-sizing: border-box;
+  height: 88rpx;
+  padding-top: 16rpx;
+}
+.tools .entry .icon image{
+  width: 48rpx;
+}
+
+.partner.user-module .bd{
+  display: flex;
+  align-items: center;
+}
+
+.partner.user-module .partner-item{
+  flex: 1;
+  text-align: center;
+  padding: 16rpx;
+  
+}
+
+.partner.user-module .partner-item .val{
+  font-size: larger;
+  line-height: 64rpx;
+}
+/* v2 end */

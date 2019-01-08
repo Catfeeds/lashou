@@ -1,0 +1,14 @@
+.ls_main_bg_color{ 
+  background-color: #ff4544
+}
+.ls_btn{
+  width:100%;
+  background-color:#ff4544;
+  color:#ffffff;
+  font-weight:bold;
+  height:100rpx;
+  line-height:100rpx;
+}
+.ls_href_color{
+  color: #014c8c;
+}

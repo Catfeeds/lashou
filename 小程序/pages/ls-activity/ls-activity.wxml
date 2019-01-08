@@ -1,0 +1,63 @@
+<!--pages/ls-activity/ls-activity.wxml-->
+<navigator class='share-status' url='/pages/ls-activity-team/ls-activity-team'>分享统计</navigator>
+<view class='activity-meta-wrapper'>
+  <view class='activity-meta'>
+    <view class='activity-title'>全球首届粉丝节重磅来袭</view>
+    <view class='activity-time'>活动时间：8月6日9:00 - 8日9:00</view>
+  </view>
+</view>
+
+<view class='activity-timer'>
+  <view class='icon'></view>
+  <view class='label'>{{left_label}}</view>
+  <view class='time time-h'>{{start_left_h}}</view>
+  <view class='time-saperator'>:</view>
+  <view class='time time-i'>{{start_left_i}}</view>
+  <view class='time-saperator'>:</view>
+  <view class='time time-s'>{{start_left_s}}</view>
+</view>
+
+<view class='activity-person'>
+  <view class='join'>
+    <view class='label'>参与人数</view>
+    <view class='val'>
+      <view class='part-int-val part-int-val1'>{{join_val[0]}}</view>
+      <view class='part-int-val part-int-val2'>{{join_val[1]}}</view>
+      <view class='part-int-val part-int-val3'>{{join_val[2]}}</view>
+      <view class='part-int-val part-int-val4'>{{join_val[3]}}</view>
+      <view class='part-int-val part-int-val5'>{{join_val[4]}}</view>
+      <view class='part-int-val part-int-val6'>{{join_val[5]}}</view>
+      <view class='part-int-val part-int-val7'>{{join_val[6]}}</view>
+    </view>
+  </view>
+
+  <view class='share'>
+    <view class='label'>分享次数</view>
+    <view class='val'>
+      <view class='part-int-val part-int-val1'>{{share_val[0]}}</view>
+      <view class='part-int-val part-int-val2'>{{share_val[1]}}</view>
+      <view class='part-int-val part-int-val3'>{{share_val[2]}}</view>
+      <view class='part-int-val part-int-val4'>{{share_val[3]}}</view>
+      <view class='part-int-val part-int-val5'>{{share_val[4]}}</view>
+      <view class='part-int-val part-int-val6'>{{share_val[5]}}</view>
+      <view class='part-int-val part-int-val7'>{{share_val[6]}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='activity-main' style='text-align:center; margin-top:32rpx;'>
+  <image src='https://api.anmeila.com.cn/statics/images/activity/main.png' style='width:689rpx;' mode='widthFix'></image>
+</view>
+
+<view class='handle'>
+  <view class='btn {{handle_disabled ? "disable" : ""}}' bindtap='{{handle_disabled ? "" : "clickPintuan"}}'>
+  {{handle_title}}
+  <view wx:if='{{ !handle_disabled }}' class='goto-handle'></view>
+  </view>
+</view>
+
+
+<view class='activity-rule'>
+  <view class='hd'>免责声明</view>
+  <view class='bd'>本活动为安美拉感恩回馈新老客户，活动最终解释权归安美拉所有。</view>
+</view>

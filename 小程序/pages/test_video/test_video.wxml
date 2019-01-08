@@ -1,0 +1,6 @@
+<view>
+  <view style='width:80%; margin:0 auto;'>
+    <view>hello world</view>
+    <video src="https://api.anmeila.com.cn/statics/images/ssds/ssdsscsp.mp4" objectFit='cover'></video>
+  </view>
+</view>

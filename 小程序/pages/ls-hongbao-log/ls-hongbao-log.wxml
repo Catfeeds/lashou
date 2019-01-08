@@ -1,0 +1,44 @@
+<view class="ls-hongbao-summary">
+  <view class='ls-hongbao-total'>
+    <view class='lable'>总计获得红包</view>
+    <view class='val'>{{hongbao.hongbao_total}}</view>
+  </view>
+  <view class='ls-hongbao-detail'>
+    <view class='ls-hongbao-part'>
+      <view class='lable'>已提现</view>
+      <view class='val'>{{hongbao.hongbao_cash}}</view>
+    </view>
+    <view class='ls-hongbao-part'>
+      <view class='lable'>余额</view>
+      <view class='val'>{{hongbao.hongbao_left}}</view>
+    </view>
+  </view>
+  <button size='mini' bindtap='onCash' style='display:none;'>提现</button>
+  <image src='https://api.anmeila.com.cn/statics/images/ssds/help.png' style='width:60rpx; height:60rpx; position:absolute; right:32rpx; top:32rpx;' bindtap='openrule'></image>
+</view>
+<view class="ls-hongbao-log">
+  <view class='ls-hongbao-log_item' wx:for="{{hongbao.log_list}}">
+    <view class='ls-hongbao-log_meta'>
+      <view class='ls-hongbao-log_add_time'>{{item.add_time}}</view>
+      <view class='ls-hongbao-log_desc'>{{item.log}}</view>
+    </view>
+    <view class='ls-hongbao-log_amount'>+ {{item.val}}</view>
+  </view>
+</view>
+
+<view class="ls-modal {{show_cash_error ? 'show' : ''}}" bindtap='closeCashError'>
+  <view class='ls-modal_main'>
+    <view style='line-height:200%; text-align:center; font-size:large'>温馨提示</view>
+    <view style='padding:32rpx; line-height:200%;'>{{cash_error}}</view>
+    <button  open-type="share" type="share" style='margin:16rpx;'>邀请好友领现金，足额提现</button>
+  </view>
+</view>
+
+<view class="ls-modal {{show_rules ? 'show' : ''}}" bindtap='closeRules'>
+  <view class='ls-modal_main'>
+  <view style='line-height:60rpx; text-align:center; font-size:large'>全新红包规则</view>
+     <text style='line-height:150%;'>{{hongbao.rules}}</text>
+    <button  style='margin:16rpx 0;'>我知道了</button>
+  </view>
+</view>
+<include src="/lashou/common/common" />

@@ -1,0 +1,278 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.98",
+	"appid": "wxc836c1f6659cdca2",
+	"projectname": "applet_lashou",
+	"svr": "/",
+	"client": "/",
+	"qcloudRoot": "/",
+	"miniprogramRoot": "/",
+	"pluginRoot": "/",
+	"scripts": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 38,
+			"list": [
+				{
+					"id": -1,
+					"name": "红包分享",
+					"pathName": "pages/ls-hongbao-shared/ls-hongbao-shared",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "官方投票通道",
+					"pathName": "pages/ls-toupiao-list/ls-toupiao-list",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "code",
+					"pathName": "pages/ssds-player-join/ssds-player-join",
+					"query": "scene=code2563"
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "wr",
+					"pathName": "pages/wr/wr",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选手中心",
+					"pathName": "pages/ls-toupiao-playercenter/ls-toupiao-playercenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": "keywords=12"
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/cat/cat",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选手中心",
+					"pathName": "pages/ls-toupiao-playercenter/ls-toupiao-playercenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选手榜",
+					"pathName": "pages/ls-toupiao-list/ls-toupiao-list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享也",
+					"pathName": "pages/index/index",
+					"query": "user_id=702"
+				},
+				{
+					"id": -1,
+					"name": "分享成功",
+					"pathName": "pages/ls-hongbao-shared/ls-hongbao-shared",
+					"query": ""
+				},
+				{
+					"id": 18,
+					"name": "用户中心",
+					"pathName": "pages/user/user",
+					"query": "user_id=7"
+				},
+				{
+					"id": 19,
+					"name": "from hongbao",
+					"pathName": "pages/index/index",
+					"query": "user_id=18"
+				},
+				{
+					"id": -1,
+					"name": "抽奖",
+					"pathName": "pages/choujiang/choujiang",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享者获得红包",
+					"pathName": "pages/index/index",
+					"query": "user_id=200002"
+				},
+				{
+					"id": -1,
+					"name": "订单确认页面",
+					"pathName": "pages/order-submit/order-submit",
+					"query": ""
+				},
+				{
+					"id": 23,
+					"name": "index userid",
+					"pathName": "pages/index/index",
+					"query": "scene=200001"
+				},
+				{
+					"id": 24,
+					"name": "share index",
+					"pathName": "pages/index/index",
+					"query": "user_id=233451"
+				},
+				{
+					"id": -1,
+					"name": "参赛礼包",
+					"pathName": "pages/goods/goods",
+					"query": "id=199"
+				},
+				{
+					"id": -1,
+					"name": "测试模板消息",
+					"pathName": "pages/sns/sns",
+					"query": "user_id=329437"
+				},
+				{
+					"id": -1,
+					"name": "quick purchase",
+					"pathName": "pages/quick-purchase/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test_video",
+					"pathName": "pages/test_video/test_video",
+					"query": ""
+				},
+				{
+					"id": 31,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选手详情",
+					"pathName": "pages/ls-player-detail/ls-player-detail",
+					"query": "user_id=211249"
+				},
+				{
+					"id": 35,
+					"name": "ls-activity",
+					"pathName": "pages/ls-activity/ls-activity",
+					"query": "user_id=200001"
+				},
+				{
+					"id": -1,
+					"name": "拼团首页",
+					"pathName": "pages/pt/index/index",
+					"query": ""
+				},
+				{
+					"id": 37,
+					"name": "活动首页 share",
+					"pathName": "pages/ls-activity/ls-activity",
+					"query": "user_id=20001&from_activity=1"
+				},
+				{
+					"id": -1,
+					"name": "拼团分享统计",
+					"pathName": "pages/ls-activity-team/ls-activity-team",
+					"query": "user_id=20001&from_activity=1"
+				},
+				{
+					"id": -1,
+					"name": "test share",
+					"pathName": "pages/test-share/test-share",
+					"query": ""
+				},
+				{
+					"id": 40,
+					"name": "团长分享",
+					"pathName": "pages/pt/group/details",
+					"query": "oid=2479&user_id=200001"
+				},
+				{
+					"id": 41,
+					"name": "拼团详情分享",
+					"pathName": "pages/pt/details/details",
+					"query": "gid=3&user_id=200001"
+				},
+				{
+					"id": -1,
+					"name": "user center",
+					"pathName": "pages/user/user",
+					"query": ""
+				},
+				{
+					"id": 43,
+					"name": "goods detail",
+					"pathName": "pages/goods/goods",
+					"query": "id=241"
+				},
+				{
+					"id": 44,
+					"name": "分享二维码",
+					"pathName": "pages/share-qrcode/share-qrcode",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "goods detail",
+					"pathName": "pages/goods/goods",
+					"query": "id=211"
+				},
+				{
+					"id": -1,
+					"name": "oldlogin",
+					"pathName": "pages/login/oldlogin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品分享",
+					"pathName": "pages/goods/goods",
+					"query": "id=512&user_id=200011"
+				},
+				{
+					"id": -1,
+					"name": "成为旗舰店",
+					"pathName": "pages/partner/reg/reg"
+				}
+			]
+		}
+	}
+}

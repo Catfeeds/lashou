@@ -1,0 +1,99 @@
+/* pages/ls-player-detail/ls-player-detail.wxss */
+page{
+  background: #ffffff;
+}
+.player-info{
+  background-size: 750rpx 336rpx;
+  min-height: 336rpx;
+  background-repeat: no-repeat;
+  padding-top: 180rpx;
+  border-bottom: 2rpx solid #e4e4e4;
+}
+
+.player-info .avatar{
+  font-size: 0;
+  text-align: center;
+}
+
+.player-info .avatar image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+
+.player-info .name {
+  text-align: center;
+  color: #000;
+  padding-top: 16rpx;
+}
+
+.player-info .declaration{
+  text-align: center;
+  font-size: small;
+  padding: 16rpx;
+}
+
+.weight-log{
+  padding: 16rpx 0;
+}
+
+.weight-log .weight-log-title{
+  color: #f2a2bb;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weight-log-item{
+  font-size: 0;
+}
+.weight-log-item.left{
+  padding-right: 50%;
+  text-align: right;
+}
+.weight-log-item.right{
+  padding-left: 50%;
+  text-align: left;
+}
+
+.weight-log-main{
+  background-size: 350rpx 80rpx;
+  background-repeat: no-repeat;
+  width: 350rpx;
+  height: 80rpx;
+  position: relative;
+  display: inline-block;
+}
+
+.weight-log-item.left .weight-log-main{
+  background-image: url(https://api.anmeila.com.cn/statics/images/ssds/player-weight-bg-left.png);
+  margin-right:-47rpx;
+}
+
+.weight-log-item.right .weight-log-main{
+  background-image: url(https://api.anmeila.com.cn/statics/images/ssds/player-weight-bg-right.png);
+  margin-left: -49rpx;
+}
+
+.weight-log-main .weight-date{
+  position: absolute;
+  top: 4rpx;
+  left: 40rpx;
+  font-size: 14px;
+}
+
+.weight-log-main .weight{
+  font-size: 10px;
+  position: absolute;
+  bottom: 2rpx;
+  left: 40rpx;
+}
+
+.weight-log-item.right .weight-log-main .weight-date{
+  left: 100rpx;
+}
+
+.weight-log-item.right .weight-log-main .weight{
+  left: 100rpx;
+}
+

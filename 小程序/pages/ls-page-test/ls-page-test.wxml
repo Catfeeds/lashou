@@ -1,0 +1,8 @@
+<!--pages/ls-page-test/ls-page-test.wxml-->
+<view class='page'>
+<view class='page-main'>
+  <view style='height:2000rpx;'></view>
+  <view>je;;p</view>
+</view>
+<view class='page-bottom'></view>
+</view>

@@ -1,0 +1,58 @@
+<view class="step1" wx:if="{{user_info.is_partner==0}}">
+  <view class="info-bg">
+    <image src="https://api.anmeila.com.cn/statics/images/ssds/join_partner_banner2.png" class="bg" style='width:100%;' mode='widthFix'/>
+  </view>
+
+  <form bindsubmit="formSubmit" report-submit='true'>
+    <view class="info">
+
+<view class="info-label info-content" style='height:auto;'>
+  <view class="info-right" style='margin-top:16rpx;'>
+      <view class="info-left flex-y-center required" style='width:auto'>安美拉帐号</view>
+      <input   class="name-input" type="text" name="uid" placeholder="代理帐号" value="{{form.uid}}" style='margin-top:16rpx;'/>
+  </view>
+</view>
+
+<view class="info-label info-content flex-row" style='height:auto;'>
+       
+  <view class="info-right" style='margin-top:16rpx;'>
+    <view class="info-left flex-y-center required" style='width:auto'>安美拉密码</view>
+      <input  class="name-input"  type="password" name="pwd"  placeholder="代理帐号所对应的密码" value="{{form.pwd}}" style='margin-top:16rpx;'/>
+    </view>
+  </view>
+
+
+
+
+      <view class="info-label info-content flex-row">
+        <view class="info-agree flex-row flex-y-center" bindtap="agree">
+          <input hidden="true" name="agree" value="{{agree}}"/>
+          <image src="{{img}}" style="width:32rpx;height:32rpx;"></image>
+          <text style="margin-left:10rpx;">我已经阅读并了解</text>
+          <view style="color:#f899bc" bindtap="agreement">【旗舰店申请协议】</view>
+        </view>
+      </view>
+    </view>
+    <view class="info-btn flex-row">
+      <button class="flex-y-content info-btn-content" formType="submit">{{subName}}</button>
+    </view>
+  </form>
+  <view class="info">
+    <image src='https://api.anmeila.com.cn/statics/images/ssds/partner_benifit.png' style='width:100%;' mode='widthFix'></image>
+  </view>
+</view>
+<view class="step2" wx:else>
+  <view class="info-bg" style="height:300rpx">
+    <image src="{{share_setting.pic_url_2}}" class="bg" />
+  </view>
+  <view class="info">
+    <view class="info-title">
+      <image class="info-images" src="/images/img-share-info.png"></image>
+    </view>
+    <view class="info-content">谢谢您的支持，请等待审核！</view>
+    <view class="flex-row info-btn1">
+      <navigator open-type="redirect" url="/pages/index/index" class="flex-y-content btn">去商城逛逛</navigator>
+    </view>
+  </view>
+</view>
+<include src="/lashou/common/common" />

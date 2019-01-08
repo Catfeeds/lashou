@@ -1,0 +1,37 @@
+<!--pages/ls-activity-team/ls-activity-team.wxml-->
+<view class='share_status'>
+  <text>{{share_status}}</text>
+</view>
+
+<view class='tab'>
+  <view class='title'>用户</view>
+  <view class='bd'>
+    <block wx:if="{{tree_ids.length > 3}}">
+      <view class='tab-item' data-user-id='{{tree_ids[0]}}' data-user-name='{{item.nickname}}' data-index-num="0"  bindtap='clickTabItem'>{{tree_titles[0]}} ></view>
+      <view class='tab-item sapterate'>...</view>
+      <view class='tab-item' data-index-num="{{tree_titles.length - 2}}" data-user-id='{{tree_ids[tree_titles.length - 2]}}' data-user-name='{{item.nickname}}'  bindtap='clickTabItem'>{{tree_titles[tree_titles.length - 2]}} ></view>
+      <view class='tab-item' data-index-num="{{tree_titles.length - 1}}" data-user-id='{{tree_ids[tree_titles.length - 1]}}' data-user-name='{{item.nickname}}'  bindtap='clickTabItem'>{{tree_titles[tree_titles.length - 1]}}</view>
+    </block>
+
+    <block wx:else>
+      <view class='tab-item' wx:for='{{tree_titles}}'  data-index-num="{{index}}" data-user-id='{{tree_ids[index]}}' data-user-name='{{item}}' bindtap='clickTabItem'>{{item}}{{index == tree_ids.length - 1 ? "" : " >"}}</view>
+    </block>
+  </view>
+</view>
+
+<view class='team-item' wx:for='{{list}}' data-user-id='{{item.user_id}}' data-user-name='{{item.nickname}}' bindtap='clickListItem'>
+  <view class='user-info'>
+    <view class='avatar'>
+      <image src='{{item.avatar_url}}'></image>
+    </view>
+    <view class='username'>{{item.nickname}}</view>
+  </view>
+
+  <view class='share-info'>
+    <view class='mobile'>{{item.mobile == null ? "" : item.mobile}}</view>
+    <view class='buy-status'>{{item.buy_status}}</view>
+    <view class='pin-status'>{{item.pin_status}}</view>
+    <view class='share-status'>{{item.share_status}}</view>
+    <view class='add_time'>{{item.add_time}}</view>
+  </view>
+</view>

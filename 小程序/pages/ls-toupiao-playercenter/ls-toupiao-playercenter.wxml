@@ -1,0 +1,66 @@
+<view  wx:if="{{!showModal}}" style='padding-bottom:100rpx;'>
+
+<view class="jfsc" bindtap='gotoJfsc'>
+<image src='https://api.anmeila.com.cn/statics/images/ssds/jfsc.jpg'  style='width:100%' mode='widthFix'/>
+</view>
+
+<view class='be-agent' wx:if="{{!user_info.is_distributor}}">
+  <button bindtap='goto298'>购买298 成为代理</button>
+</view>
+
+<view class='player-center' wx:if='{{player_info}}'>
+  <view class='share-click-count'>
+    <view class='share-click-title'>访问量</view>
+    <view class='share-from'>
+      <view class='from-item from-friend'>
+        <view class='label'>朋友</view><view class='val'>{{current_share_result.friend}}</view>
+      </view>
+
+      <view class='from-item from-group'>
+        <view class='label'>群</view><view class='val'>{{current_share_result.group}}</view>
+      </view>
+
+      <view class='from-item from-timeline'>
+        <view class='label'>朋友圈</view><view class='val'>{{current_share_result.timeline}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='player-avatar'>
+    <view class='avatar'><image src='{{player_info.avatar}}'/></view>
+    <view class='player-name'>{{player_info.username}}</view>
+    <view class='vote-val-wrapper'>
+      <view class='vote-val sum'><view class="val">{{player_info.vote_sum}}</view><view class="label">综合</view></view>
+      <view class='vote-val viewer'><view class="val">{{player_info.vote_viewer}}</view><view class="label">观众</view></view>
+      <view class='vote-val weight'><view class="val">{{player_info.vote_weight}}</view><view class="label">体脂</view></view>
+    </view>
+  </view>
+</view>
+
+<view class='share-data'>
+  <view class='share-item'><view class='label'></view><view class='val'></view></view>
+</view>
+
+<view class='player-video'>
+  <view class='video-item' wx:for="{{video_list}}">
+    <view class='video'>
+      体脂视频
+      <image class="play" src="/images/video-play.png" data-url="{{item.video_url}}" bindtap="play" style='width:100rpx; height:100rpx;'></image>
+    </view>
+    <view class='meta'>
+      <view class='add_date_time'>{{item.add_date_time}}</view>
+      <view class='status'>审核状态 {{item.status}}</view>
+      <view class='weight'>体重 {{item.weight}}</view>
+    </view>
+  </view>
+</view>
+
+<image style='width:100%; position:fixed; left:0; bottom:0' mode='widthFix' src='https://api.anmeila.com.cn/statics/images/ssds/player-center-footer.jpg?v=201805241625'></image>
+</view>
+
+<!--弹窗-->
+
+<view class='ls-modal player-video-play {{show_play ? "show" : ""}}'>
+  <view class='ls-modal-bg' bindtap='closePlayVideo'></view>
+  <video wx:if="{{show_play}}" src='{{url}}' id="video" autoplay="true"></video>
+</view>
+ <include src="/lashou/common/common" />

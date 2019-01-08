@@ -1,0 +1,5 @@
+<!--pages/sns/sns.wxml-->
+<form bindsubmit='formSubmit' report-submit='true'>
+<button form-type='submit' open-type='share'>click me</button>
+<view form-type='submit' style='height:88rpx; background:red;'>hello</view>
+</form>

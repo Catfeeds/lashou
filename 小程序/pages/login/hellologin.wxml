@@ -1,0 +1,11 @@
+<navigator  class='ls-login_handle' url = "/pages/login/oldlogin"><view style='width:150%;height:310rpx; position: absolute;z-index:5' ></view>
+</navigator>
+<!--暂时不提供注册-->
+ <button plain open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" style='width:150%;height:700rpx; position: absolute;top:330rpx;z-index:5;background-color:transparent; .transButton{background-color:transparent;'></button> 
+<view class="ls-login show" style=' background-image: url(https://api.anmeila.com.cn/statics/images/ssds/hellologin.jpg?time=5745423543);); no-repeat; background-position: center center; background-size: cover;'> 
+
+<view class='ls-login_main' style='background-color:transparent '>
+
+</view>
+
+</view>

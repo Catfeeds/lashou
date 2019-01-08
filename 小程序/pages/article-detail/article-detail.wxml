@@ -1,0 +1,7 @@
+<!--pages/article-detail/article-detail.wxml-->
+<view class='video-wrapper'><video wx:if="{{show_video}}" src="{{video_url}}" style='margin:0 auto;'></video></view>
+<view style="background: #fff;">
+    <import src="../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
+<include src="/lashou/common/common" />

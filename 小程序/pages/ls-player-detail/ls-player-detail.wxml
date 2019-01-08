@@ -1,0 +1,16 @@
+<view class="player-info" style='background-image:url(https://api.anmeila.com.cn/statics/images/ssds/player-info_banner.png)'>
+  <view class='avatar'><image src='{{player_info.avatar}}' mode='widthFix'></image></view>
+  <view class='name'>{{player_info.name ? player_info.name : player_info.username}}</view>
+  <view class='declaration'>{{player_info.declaration ? player_info.declaration : "这家伙很懒 什么都没有留下"}}</view>
+</view>
+<view class='weight-log'>
+  <view class='weight-log-title'>我的参赛历程</view>
+  <view class='weight-log-list'>
+    <view class='weight-log-item {{index % 2 == 0 ? "left" : "right"}}' wx:for="{{weight_log}}">
+      <view class='weight-log-main'>
+        <view class='weight-date'>{{item.add_date}}</view>
+        <view class='weight'>我的体重是 {{item.weight}}kg</view>
+      </view>
+    </view>
+  </view>
+</view>

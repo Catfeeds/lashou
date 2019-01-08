@@ -1,0 +1,71 @@
+<include src="/commons/navbar/navbar" />
+<view class="after-navber">
+<view class="info">
+  <view class="info-title flex-row">
+    <view class="flex-y-center">
+      <image class="info-img" src="{{user_info.avatar_url}}"></image>
+    </view>
+    <view class="info-block">
+      <view class="info-up info-blod">{{partner.name}}</view>
+    </view>
+  </view>
+  <view class="info-content flex-row">
+    <view class="info-left">
+      <view class="info-label">
+        <view class="info-first">{{custom.words.can_be_presented.name}}</view>
+        <view class="info-second info-blod info-big flex-row">{{partner.amount}}元</view>
+      </view>
+      <view class="info-label">
+        <view class="info-first">预计收益</view>
+        <view class="info-second info-blod info-big flex-row">{{partner.yj_amount}}元</view>
+      </view>
+    </view>
+    <view class="info-right">
+      <navigator open-type="navigate" class="" url="/pages/share-money/share-money?is_partner=1">
+          <view class="info-btn" style="font-size:40rpx;">{{custom.words.cash.name}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class="list flex-row">
+  <navigator class="item border-bottom" url="/pages/partner/market/market">
+    <view class="list-img flex-x-center">
+      <image class="img" src="{{custom.menus.money.icon}}"></image>
+    </view>
+    <view class="list-content text-more">{{custom.menus.money.name}}</view>
+    <view class="flex-x-center list-content">
+     </view>
+  </navigator>
+  <navigator class="item border-bottom border-between" url="/pages/partner/order/order">
+    <view class="list-img flex-x-center">
+      <image class="img" src="{{custom.menus.order.icon}}"></image>
+    </view>
+    <view class="list-content text-more">{{custom.menus.order.name}}</view>
+    <view class="flex-x-center list-content">
+     <!--view class="list-red">{{partner.yj_amount}}</view>元 -->
+      </view>
+  </navigator>
+  <navigator class="item border-bottom" url="/pages/cash-detail/cash-detail">
+    <view class="list-img flex-x-center">
+      <image class="img" src="{{custom.menus.cash.icon}}"></image>
+    </view>
+    <view class="list-content text-more">{{custom.menus.cash.name}}</view>
+    <view class="flex-x-center list-content">
+     </view>
+  </navigator>
+</view>
+<!--view class="list flex-row">
+
+  <navigator class="item border-bottom border-between" url="/pages/share-profitDetails/share-profitDetails">
+    <view class="list-img flex-x-center">
+      <image class="img" src="{{custom.menus.profitDetails.icon}}"></image>
+    </view>
+    <view class="list-content text-more">{{custom.menus.profitDetails.name}}</view>
+
+  </navigator>
+
+
+
+</view-->
+</view>
+<include src="/lashou/common/common" />
